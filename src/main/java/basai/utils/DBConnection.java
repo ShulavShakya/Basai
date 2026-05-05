@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class DBConnection {
     public static Connection getConnection() throws Exception {
-        Class.forName(ConfigLoader.getProperty("db.driver"));
+        Class.forName("com.mysql.cj.jdbc.Driver");
 
         return DriverManager.getConnection(
                 ConfigLoader.getProperty("db.url"),
