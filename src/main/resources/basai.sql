@@ -14,14 +14,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-SET @MYSQLDUMP_TEMP_LOG_BIN = @@SESSION.SQL_LOG_BIN;
-SET @@SESSION.SQL_LOG_BIN= 0;
-
---
--- GTID state at the beginning of the backup 
---
-
-SET @@GLOBAL.GTID_PURGED=/*!80000 '+'*/ '2daf5588-0f98-11f1-9d73-295a4654d11e:1-290';
 
 --
 -- Table structure for table `bookings`
@@ -193,7 +185,6 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (8,'Admin','admin@basai.com','$2a$10$9nAIEutNb1I.kdlorgp3Sus3yl.Pb/QafR6vYr6rq57Ra62xMaKH2','9800000000',NULL,'Administrator','Kathmandu','VerificationDocument','admin','2026-05-05 20:15:25','Verified','2000-01-01');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-SET @@SESSION.SQL_LOG_BIN = @MYSQLDUMP_TEMP_LOG_BIN;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
