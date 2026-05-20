@@ -1,5 +1,7 @@
 package basai.room.model.dto;
 
+import basai.room.model.Room;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -13,8 +15,12 @@ public class RoomDTO {
         Available, Rented
     }
 
+    public enum RoomType{
+        SINGLE, DOUBLE, ONE_BHK, TWO_BHK, STUDIO
+    }
     private int roomId;
     private int ownerId;
+    private String ownerName;
     private String title;
     private String description;
     private BigDecimal rentPrice;
@@ -25,7 +31,7 @@ public class RoomDTO {
     private String photo5;
     private String city;
     private String address;
-    private int numberOfRooms;
+    private RoomType roomType;
     private FurnishingStatus furnishingStatus;
     private AvailabilityStatus availabilityStatus;
     private String facilities;
@@ -40,12 +46,20 @@ public class RoomDTO {
         this.roomId = roomId;
     }
 
-    public int getOwnerId() {
+    public int getOwnerId(){
         return ownerId;
     }
 
-    public void setOwnerId() {
+    public void setOwnerId(int ownerId){
         this.ownerId = ownerId;
+    }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
     }
 
     public String getTitle() {
@@ -128,12 +142,12 @@ public class RoomDTO {
         this.address = address;
     }
 
-    public int getNumberOfRooms() {
-        return numberOfRooms;
+    public RoomType getRoomType() {
+        return roomType;
     }
 
-    public void setNumberOfRooms(int numberOfRooms) {
-        this.numberOfRooms = numberOfRooms;
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
     }
 
     public FurnishingStatus getFurnishingStatus() {
@@ -176,9 +190,10 @@ public class RoomDTO {
         this.updatedAt = updatedAt;
     }
 
-    public RoomDTO(int roomId, int ownerId, String title, String description, BigDecimal rentPrice, String photo1, String photo2, String photo3, String photo4, String photo5, String city, String address, int numberOfRooms, FurnishingStatus furnishingStatus, AvailabilityStatus availabilityStatus, String facilities, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public RoomDTO(int roomId, int ownerId, String ownerName, String title, String description, BigDecimal rentPrice, String photo1, String photo2, String photo3, String photo4, String photo5, String city, String address, RoomType roomType, FurnishingStatus furnishingStatus, AvailabilityStatus availabilityStatus, String facilities, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.roomId = roomId;
         this.ownerId = ownerId;
+        this.ownerName = ownerName;
         this.title = title;
         this.description = description;
         this.rentPrice = rentPrice;
@@ -189,11 +204,22 @@ public class RoomDTO {
         this.photo5 = photo5;
         this.city = city;
         this.address = address;
-        this.numberOfRooms = numberOfRooms;
+        this.roomType = roomType;
         this.furnishingStatus = furnishingStatus;
         this.availabilityStatus = availabilityStatus;
         this.facilities = facilities;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public RoomDTO(int roomId, String title, BigDecimal rentPrice, String photo1, String city, RoomType roomType, AvailabilityStatus availabilityStatus, String facilities) {
+        this.roomId = roomId;
+        this.title = title;
+        this.rentPrice = rentPrice;
+        this.photo1 = photo1;
+        this.city = city;
+        this.roomType = roomType;
+        this.availabilityStatus = availabilityStatus;
+        this.facilities = facilities;
     }
 }
