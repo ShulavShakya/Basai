@@ -1,4 +1,3 @@
-
 package basai.room.model;
 
 import java.math.BigDecimal;
@@ -11,7 +10,11 @@ public class Room {
     }
 
     public enum AvailabilityStatus {
-        Available, Booked
+        Available, Rented
+    }
+
+    public enum RoomType{
+        SINGLE, DOUBLE, ONE_BHK, TWO_BHK, STUDIO
     }
     private int roomId;
     private int ownerId;
@@ -21,9 +24,11 @@ public class Room {
     private String photo1;
     private String photo2;
     private String photo3;
+    private String photo4;
+    private String photo5;
     private String city;
     private String address;
-    private int numberOfRooms;
+    private RoomType roomType;
     private FurnishingStatus furnishingStatus;
     private AvailabilityStatus availabilityStatus;
     private String facilities;
@@ -94,6 +99,22 @@ public class Room {
         this.photo3 = photo3;
     }
 
+    public String getPhoto4() {
+        return photo4;
+    }
+
+    public void setPhoto4(String photo4) {
+        this.photo4 = photo4;
+    }
+
+    public String getPhoto5() {
+        return photo5;
+    }
+
+    public void setPhoto5(String photo5) {
+        this.photo5 = photo5;
+    }
+
     public String getCity() {
         return city;
     }
@@ -110,12 +131,12 @@ public class Room {
         this.address = address;
     }
 
-    public int getNumberOfRooms() {
-        return numberOfRooms;
+    public RoomType getRoomType() {
+        return roomType;
     }
 
-    public void setNumberOfRooms(int numberOfRooms) {
-        this.numberOfRooms = numberOfRooms;
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
     }
 
     public FurnishingStatus getFurnishingStatus() {
@@ -158,7 +179,7 @@ public class Room {
         this.updatedAt = updatedAt;
     }
 
-    public Room(int roomId,  int ownerId, String title, String description, BigDecimal rentPrice, String photo1, String photo2, String photo3, String city, String address, int numberOfRooms, FurnishingStatus furnishingStatus, AvailabilityStatus availabilityStatus, String facilities, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Room(int roomId,  int ownerId, String title, String description, BigDecimal rentPrice, String photo1, String photo2, String photo3, String photo4, String photo5, String city, String address, RoomType roomType, FurnishingStatus furnishingStatus, AvailabilityStatus availabilityStatus, String facilities, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.roomId = roomId;
         this.ownerId = ownerId;
         this.title = title;
@@ -169,7 +190,7 @@ public class Room {
         this.photo3 = photo3;
         this.city = city;
         this.address = address;
-        this.numberOfRooms = numberOfRooms;
+        this.roomType = roomType;
         this.furnishingStatus = furnishingStatus;
         this.availabilityStatus = availabilityStatus;
         this.facilities = facilities;
