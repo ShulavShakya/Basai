@@ -1,8 +1,10 @@
 package basai.user.model;
 
+import basai.booking.model.Booking;
+
 import java.time.LocalDateTime;
 
-public class User {
+public class User{
 
     public enum VerificationStatus{
         Verified, Pending
@@ -156,11 +158,12 @@ public class User {
         this.role = role;
     }
 
-    public User(int user_id, String name, String email, String password, String role) {
+    public User(int user_id, String name, String email, String password, VerificationStatus verificationStatus, String role) {
         this.user_id = user_id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.verificationStatus = verificationStatus;
         this.role = role;
     }
 }
