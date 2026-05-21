@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-
 @WebServlet("/rooms/detail")
 public class GetRoomByIdServlet extends HttpServlet {
     @Override
