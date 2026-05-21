@@ -1,0 +1,126 @@
+/* ===== OWNER DASHBOARD CSS (LIGHT MODE) ===== */
+
+/* Two-column layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+}
+
+.dashboard-left  { display: flex; flex-direction: column; gap: 20px; }
+.dashboard-right { display: flex; flex-direction: column; gap: 20px; }
+
+/* Recent Listings Cards */
+.listing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.listing-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: border-color .2s, box-shadow .2s;
+    box-shadow: var(--shadow);
+}
+.listing-card:hover { border-color: var(--navy); box-shadow: 0 6px 28px rgba(14,157,130,.12); }
+
+.listing-card-img {
+    width: 100%; height: 130px;
+    object-fit: cover;
+    background: var(--card-border);
+    display: block;
+}
+
+.listing-card-img-placeholder {
+    width: 100%; height: 130px;
+    background: linear-gradient(135deg, #e8edf4 0%, #f0f4f8 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted);
+    position: relative;
+}
+
+.listing-card-status {
+    position: absolute; top: 10px; left: 10px;
+    padding: 3px 10px; border-radius: 999px;
+    font-size: .68rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .5px;
+}
+.status-available { background: var(--navy); color: #fff; }
+.status-occupied  { background: var(--text-muted); color: #fff; }
+
+.listing-card-body { padding: 14px; }
+.listing-card-name {
+    font-family: 'Sora', sans-serif;
+    font-size: .92rem; font-weight: 600;
+    color: var(--text-primary); margin-bottom: 2px;
+}
+.listing-card-price {
+    font-size: .9rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 6px;
+}
+.listing-card-location {
+    font-size: .75rem; color: var(--text-muted);
+    display: flex; align-items: center; gap: 4px;
+}
+.listing-card-meta {
+    display: flex; gap: 10px; margin-top: 8px;
+}
+.listing-card-meta .meta-item {
+    display: flex; align-items: center; gap: 4px;
+    font-size: .72rem; color: var(--text-muted);
+}
+
+/* Recent Requests (right column) */
+.request-list { display: flex; flex-direction: column; gap: 0; }
+
+.request-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    transition: background .15s;
+}
+.request-item:last-child { border-bottom: none; }
+.request-item:hover { background: rgba(14,157,130,.03); }
+
+.request-item .req-info { flex: 1; min-width: 0; }
+.request-item .req-name { font-size: .855rem; font-weight: 600; color: var(--text-primary); }
+.request-item .req-room { font-size: .75rem; color: var(--text-secondary); }
+.request-item .req-meta { font-size: .72rem; color: var(--text-muted); margin-top: 2px; }
+
+.request-item .req-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.request-item .req-time  { font-size: .68rem; color: var(--text-muted); }
+
+/* Revenue banner */
+.revenue-banner {
+    background: linear-gradient(135deg, #e8f7f3 0%, #f0faf7 100%);
+    border: 1px solid rgba(14,157,130,.2);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex; align-items: center; justify-content: space-between;
+}
+.revenue-banner .rev-label { font-size: .78rem; color: var(--text-secondary); margin-bottom: 4px; }
+.revenue-banner .rev-amount {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.6rem; font-weight: 700; color: var(--navy-dark);
+    letter-spacing: -1px;
+}
+.revenue-banner .rev-sub { font-size: .72rem; color: var(--text-muted); margin-top: 2px; }
+
+.btn-generate {
+    background: var(--navy); color: #fff;
+    border: none; border-radius: var(--radius-sm);
+    padding: 10px 18px; font-size: .82rem; font-weight: 500;
+    cursor: pointer; font-family: inherit; white-space: nowrap;
+    transition: background .18s;
+}
+.btn-generate:hover { background: var(--navy-dark); }
+
+/* Manage all requests link */
+.view-all-link {
+    font-size: .8rem; color: var(--navy);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+}
+.view-all-link:hover { text-decoration: underline; }

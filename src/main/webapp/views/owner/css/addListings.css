@@ -1,0 +1,147 @@
+.listing-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    align-items: start;
+}
+
+.form-left  { display: flex; flex-direction: column; gap: 20px; }
+.form-right { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 80px; }
+
+/* Section cards */
+.form-section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.form-section-header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Sora', sans-serif;
+    font-size: .95rem; font-weight: 600;
+    background: var(--input-bg);
+}
+.form-section-header svg { width: 16px; height: 16px; color: var(--navy); }
+
+.form-section-body { padding: 20px; }
+
+/* Two-col form row */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Upload zone */
+.upload-zone {
+    border: 2px dashed var(--border);
+    border-radius: var(--radius);
+    padding: 32px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+    background: var(--input-bg);
+}
+.upload-zone:hover { border-color: var(--navy); background: rgba(14,157,130,.04); }
+.upload-zone svg { width: 36px; height: 36px; color: var(--text-muted); margin-bottom: 10px; }
+.upload-zone .upload-text { font-size: .875rem; color: var(--text-secondary); }
+.upload-zone .upload-sub  { font-size: .72rem; color: var(--text-muted); margin-top: 4px; }
+
+/* Preview thumbnails */
+.photo-previews {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.photo-thumb {
+    aspect-ratio: 16 / 12;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #e0e0e0;
+    position: relative;
+    background: #f8f9fa;
+}
+
+.photo-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-index {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+.photo-thumb .remove-btn {
+    position: absolute; top: 4px; right: 4px;
+    width: 18px; height: 18px;
+    background: rgba(220,38,38,.85); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: .65rem; color: #fff;
+    opacity: 0; transition: opacity .15s;
+}
+.photo-thumb:hover .remove-btn { opacity: 1; }
+
+/* Map placeholder */
+.map-placeholder {
+    height: 160px;
+    background: linear-gradient(135deg, #e8edf4 0%, #f0f4f8 100%);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px; color: var(--text-muted);
+    margin-top: 12px; font-size: .8rem;
+}
+.map-placeholder svg { width: 28px; height: 28px; opacity: .45; }
+
+/* Facilities checkboxes */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.facility-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 12px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border); cursor: pointer;
+    transition: border-color .15s, background .15s;
+}
+.facility-item:hover { border-color: var(--navy); background: rgba(14,157,130,.05); }
+.facility-item input[type="checkbox"] { accent-color: var(--navy); flex-shrink: 0; margin-top: 2px; }
+.facility-item .fac-name { font-size: .855rem; font-weight: 500; color: var(--text-primary); }
+.facility-item .fac-sub  { font-size: .72rem; color: var(--text-muted); }
+
+/* Autosave indicator */
+.autosave {
+    display: flex; align-items: center; gap: 6px;
+    font-size: .75rem; color: var(--navy);
+}
+.autosave-dot {
+    width: 7px; height: 7px;
+    background: var(--navy); border-radius: 50%;
+}
+
+/* Top action bar */
+.form-actions-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px;
+}
+.form-actions-bar-right { display: flex; gap: 10px; align-items: center; }

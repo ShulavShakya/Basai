@@ -1,0 +1,613 @@
+
+
+/* ===== BREADCRUMB ===== */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .78rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+}
+
+.breadcrumb a { color: var(--text-muted); transition: color .15s; }
+.breadcrumb a:hover { color: var(--navy); }
+.breadcrumb .sep { color: var(--border); }
+.breadcrumb span:last-child { color: var(--text-primary); font-weight: 600; }
+
+/* ===== PHOTO GALLERY ===== */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 240px 180px;
+    gap: 10px;
+    margin-bottom: 28px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.gallery-main {
+    grid-row: 1 / 3;
+    position: relative;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-featured-tag {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: var(--navy);
+    color: #fff;
+    font-size: .65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.gallery-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-more-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26,26,46,.72);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.gallery-more-overlay span {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.gallery-more-overlay small {
+    font-size: .72rem;
+    opacity: .8;
+    margin-top: 2px;
+}
+
+/* ===== DETAIL LAYOUT ===== */
+.detail-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    align-items: start;
+}
+
+.detail-left { display: flex; flex-direction: column; gap: 20px; }
+.detail-right { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 80px; }
+
+/* ===== MAIN INFO CARD ===== */
+.room-main-info {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.room-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 8px;
+}
+
+.room-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -.3px;
+    line-height: 1.25;
+}
+
+.room-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.rating-stars {
+    color: var(--yellow);
+    font-size: .95rem;
+    letter-spacing: 1px;
+}
+
+.rating-score {
+    font-family: 'Sora', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.rating-count {
+    font-size: .78rem;
+    color: var(--text-muted);
+}
+
+.room-location-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .875rem;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+.room-location-row i { color: var(--navy); font-size: 1rem; }
+
+.room-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+}
+
+.room-price {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.room-price span {
+    font-size: .82rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.room-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-share,
+.btn-save {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: transparent;
+    font-size: .8rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all .18s;
+    font-family: inherit;
+}
+
+.btn-share:hover { border-color: var(--navy); color: var(--navy); }
+.btn-save:hover { border-color: var(--red); color: var(--red); }
+
+/* ===== PROPERTY OVERVIEW ===== */
+.section-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 14px;
+    padding-left: 10px;
+    border-left: 3px solid var(--navy);
+}
+
+.section-heading i { color: var(--navy); }
+
+.room-description {
+    font-size: .875rem;
+    color: var(--text-secondary);
+    line-height: 1.75;
+}
+
+/* ===== ROOM META STRIP ===== */
+.room-meta-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.meta-item {
+    padding: 14px 16px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+}
+
+.meta-item:last-child { border-right: none; }
+
+.meta-label {
+    font-size: .65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.meta-value {
+    font-family: 'Sora', sans-serif;
+    font-size: .95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ===== FACILITIES GRID ===== */
+.facilities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+.facility-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--input-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: .845rem;
+    color: var(--text-secondary);
+}
+
+.facility-item i {
+    font-size: 1.1rem;
+    color: var(--navy);
+    flex-shrink: 0;
+    width: 20px;
+    text-align: center;
+}
+
+/* ===== REVIEWS ===== */
+.review-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.review-item:last-of-type { border-bottom: none; }
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.reviewer-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .72rem;
+    font-weight: 700;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.reviewer-name { font-size: .875rem; font-weight: 600; color: var(--text-primary); }
+.reviewer-tag  { font-size: .7rem; color: var(--text-muted); }
+
+.review-stars { color: var(--yellow); font-size: .85rem; }
+
+.review-text {
+    font-size: .845rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-style: italic;
+}
+
+.btn-view-all-reviews {
+    width: 100%;
+    padding: 11px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: .845rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 16px;
+    transition: all .18s;
+    font-weight: 500;
+}
+
+.btn-view-all-reviews:hover { border-color: var(--navy); color: var(--navy); }
+
+/* ===== NO REVIEWS PLACEHOLDER ===== */
+.no-reviews-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.no-reviews-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--navy-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.no-reviews-icon i {
+    font-size: 1.8rem;
+    color: var(--navy);
+    opacity: 0.4;
+}
+
+.no-reviews-placeholder h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.no-reviews-placeholder p {
+    font-size: .845rem;
+    color: var(--text-muted);
+}
+
+/* ===== REVIEW FORM WRAP ===== */
+.review-form-wrap {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+/* ===== STAR RATING INPUT ===== */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-bottom: 4px;
+}
+
+/* Hide actual radio inputs */
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+/* Star labels */
+.star-rating label {
+    font-size: 1.8rem;
+    color: var(--border);
+    cursor: pointer;
+    transition: color .15s, transform .15s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: var(--yellow);
+}
+
+.star-rating label:hover {
+    transform: scale(1.15);
+}
+
+
+/* ===== INVESTMENT / BOOKING SIDEBAR ===== */
+.investment-card {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 20px;
+    color: #fff;
+    box-shadow: var(--shadow-lg);
+}
+
+.investment-label {
+    font-size: .65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,.55);
+    margin-bottom: 6px;
+}
+
+.investment-price {
+    font-family: 'Sora', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.5px;
+    margin-bottom: 4px;
+}
+
+.investment-price span {
+    font-size: .82rem;
+    font-weight: 400;
+    opacity: .65;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn-book-now {
+    width: 100%;
+    padding: 12px;
+    background: #20c9a0;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 16px 0 10px;
+    letter-spacing: .3px;
+    transition: opacity .18s;
+}
+
+.btn-book-now:hover { opacity: .9; }
+
+.btn-wishlist {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,.25);
+    color: rgba(255,255,255,.85);
+    border-radius: var(--radius-sm);
+    font-size: .845rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color .18s;
+}
+
+.btn-wishlist:hover { border-color: rgba(255,255,255,.6); }
+
+/* Owner info inside investment card */
+.owner-info-block {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.owner-info-label {
+    font-size: .62rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,.45);
+    margin-bottom: 8px;
+}
+
+.owner-info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.owner-avatar-sm {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .72rem;
+    font-weight: 700;
+}
+
+.owner-name-block .owner-name { font-size: .875rem; font-weight: 600; }
+.owner-name-block .owner-phone { font-size: .75rem; color: rgba(255,255,255,.55); margin-top: 2px; }
+
+/* ===== MAP CARD ===== */
+.map-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(135deg, var(--input-bg), var(--card-border));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: .82rem;
+}
+
+.map-placeholder i { font-size: 2rem; color: var(--navy); opacity: .35; }
+
+.map-info {
+    padding: 14px 16px;
+}
+
+.map-info h4 {
+    font-family: 'Sora', sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.map-info p { font-size: .78rem; color: var(--text-muted); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .detail-layout { grid-template-columns: 1fr; }
+    .detail-right { position: static; }
+    .investment-card { max-width: 420px; }
+}
+
+@media (max-width: 768px) {
+    .gallery { grid-template-columns: 1fr; grid-template-rows: 220px; }
+    .gallery-grid { display: none; }
+    .gallery-main { grid-row: 1; }
+    .room-meta-strip { grid-template-columns: 1fr 1fr; }
+    .facilities-grid { grid-template-columns: 1fr 1fr; }
+    .room-title { font-size: 1.15rem; }
+}
