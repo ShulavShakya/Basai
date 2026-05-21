@@ -1,6 +1,5 @@
 package basai.room.controller;
 
-import basai.room.model.Room;
 import basai.room.model.dao.RoomDAO;
 import basai.room.model.dto.RoomDTO;
 import basai.user.model.User;
@@ -12,7 +11,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet("/rooms/my-listings")   // ← Better URL pattern
 public class GetRoomByOwnerServlet extends HttpServlet {

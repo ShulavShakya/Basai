@@ -1,9 +1,7 @@
 package basai.room.controller;
 
-import basai.favourite.model.dao.FavouriteDAO;
 import basai.room.model.dao.RoomDAO;
 import basai.room.model.dto.RoomDTO;
-import basai.user.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
